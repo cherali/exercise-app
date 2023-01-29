@@ -1,9 +1,12 @@
+import { Suspense } from 'react'
+import Loading from 'components/Loading'
+import Router from 'routers/Router'
 
 function App() {
   return (
-    <div className="App">
-      hello world
-    </div>
+    <Suspense fallback={<Loading />}>
+      <Router />
+    </Suspense>
   )
 }
 
