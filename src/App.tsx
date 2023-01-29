@@ -3,6 +3,7 @@ import Loading from 'components/Loading'
 import Router from 'routers/Router'
 import { EmotionCacheProvider, MainStyles } from 'theme'
 import ThemeProvider from 'providers/ThemeProvider'
+import HTMLTagProvider from 'providers/HTMLTagProvider'
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       <EmotionCacheProvider>
         <ThemeProvider>
           <MainStyles />
-          <Router />
+          <HTMLTagProvider>
+            <Router />
+          </HTMLTagProvider>
         </ThemeProvider>
       </EmotionCacheProvider>
     </Suspense>
