@@ -4,6 +4,7 @@ import Router from 'routers/Router'
 import { EmotionCacheProvider, MainStyles } from 'theme'
 import ThemeProvider from 'providers/ThemeProvider'
 import HTMLTagProvider from 'providers/HTMLTagProvider'
+import MessageProvider from 'providers/MessageProvider'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <ThemeProvider>
           <MainStyles />
           <HTMLTagProvider>
+            <MessageProvider />
             <Router />
           </HTMLTagProvider>
         </ThemeProvider>
