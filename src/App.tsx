@@ -5,20 +5,23 @@ import { EmotionCacheProvider, MainStyles } from 'theme'
 import ThemeProvider from 'providers/ThemeProvider'
 import HTMLTagProvider from 'providers/HTMLTagProvider'
 import MessageProvider from 'providers/MessageProvider'
+import StateManagerProvider from 'providers/StateManagerProvider'
 
 function App() {
   return (
-    <Suspense fallback={<Loading fullScreen size='xLarge' />}>
-      <EmotionCacheProvider>
-        <ThemeProvider>
-          <MainStyles />
-          <HTMLTagProvider>
-            <MessageProvider />
-            <Router />
-          </HTMLTagProvider>
-        </ThemeProvider>
-      </EmotionCacheProvider>
-    </Suspense>
+    <StateManagerProvider>
+      <Suspense fallback={<Loading fullScreen size='xLarge' />}>
+        <EmotionCacheProvider>
+          <ThemeProvider>
+            <MainStyles />
+            <HTMLTagProvider>
+              <MessageProvider />
+              <Router />
+            </HTMLTagProvider>
+          </ThemeProvider>
+        </EmotionCacheProvider>
+      </Suspense>
+    </StateManagerProvider>
   )
 }
 
