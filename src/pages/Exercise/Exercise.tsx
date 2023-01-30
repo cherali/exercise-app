@@ -57,7 +57,7 @@ const Exercise: FC<ExerciseProps> = () => {
 				{isFetching && <Loading fullScreen centerd />}
 
 				<ExerciseFilter
-					pageOption={[10, 51]}
+					pageOption={[10, 50]}
 					itemPerPage={itemPerPage}
 					onChaageItemPerPage={onChageItemPerPage}
 					onChangeBodyPart={onChageBodyPart}
