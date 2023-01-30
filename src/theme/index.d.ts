@@ -15,6 +15,7 @@ interface IColor {
 
 export interface IPallete {
   primary: IColor;
+  secondary: IColor;
   white: IColor;
   black: IColor;
   gray: IColor;
@@ -22,3 +23,19 @@ export interface IPallete {
   red: IColor;
 }
 
+type TTypography = ClassAttributes<HTMLParagraphElement>
+
+export interface ITypography {
+  h1: TTypography;
+  h2: TTypography;
+  h3: TTypography;
+  h4: TTypography;
+  h5: TTypography;
+  h6: TTypography;
+
+  body1: TTypography;
+  body2: TTypography;
+
+  subtitle1: TTypography;
+  subtitle2: TTypography;
+}

@@ -1,9 +1,9 @@
 import type { FC } from 'react'
 import { Global, css } from '@emotion/react'
-import { IPallete } from './index.d'
+import { IPallete, ITypography } from './index.d'
 import { useTheme } from 'providers/ThemeProvider/useTheme'
 
-const globalSyle = (pallete?: IPallete) => css`
+const globalSyle = (pallete?: IPallete, typography?: ITypography) => css`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -54,13 +54,45 @@ const globalSyle = (pallete?: IPallete) => css`
     overflow: hidden;
   }
 
+  h1 {
+    ${typography?.h1};
+  }
+
+  h2 {
+    ${typography?.h2};
+  }
+
+  h3 {
+    ${typography?.h3};
+  }
+
+  h4 {
+    ${typography?.h4};
+  }
+
+  h5 {
+    ${typography?.h5};
+  }
+
+  h6 {
+    ${typography?.h6};
+  }
+
+  p {
+    ${typography?.body1};
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
   body {
     background-color: ${pallete?.white.main || 'inherit'}
   }
 
   * {
     font-family: 'Ubuntu', 'sans-serif' !important;
-    color: ${pallete?.primary.main || 'inherit'};
+    color: ${pallete?.black.main || 'inherit'};
   }
   a {
     text-decoration: none;
@@ -73,10 +105,10 @@ const globalSyle = (pallete?: IPallete) => css`
 
 const MainStyles: FC = () => {
 
-  const { pallete } = useTheme()
+  const { pallete, typography } = useTheme()
 
   return (
-    <Global styles={globalSyle(pallete)} />
+    <Global styles={globalSyle(pallete, typography)} />
   )
 }
 

@@ -9,6 +9,58 @@ import { darkPallete } from 'theme/palletes/darkPallete'
 import { lightPallete } from 'theme/palletes/lightPallete'
 
 
+const typography = {
+  h1: {
+    'fontSize': '5rem',
+    'lineHeight': '5.5rem',
+    'fontWeight': 'bold',
+  },
+  h2: {
+    'fontSize': '4rem',
+    'lineHeight': '4.4rem',
+    'fontWeight': 'bold',
+  },
+  h3: {
+    'fontSize': '3rem',
+    'lineHeight': '3.3rem',
+    'fontWeight': 'bold',
+  },
+  h4: {
+    'fontSize': '2rem',
+    'lineHeight': '2.2rem',
+    'fontWeight': 'bold',
+  },
+  h5: {
+    'fontSize': '1rem',
+    'lineHeight': '1.1rem',
+    'fontWeight': 'bold',
+  },
+  h6: {
+    'fontSize': '0.5rem',
+    'lineHeight': '0.6rem',
+    'fontWeight': 'bold',
+  },
+
+  body1: {
+    'fontSize': '1rem',
+    'lineHeight': '1.1rem',
+  },
+  body2: {
+    'fontSize': '0.7rem',
+    'lineHeight': '0.85rem',
+  },
+
+  subtitle1: {
+    'fontSize': '0.5rem',
+    'lineHeight': '0.6rem',
+  },
+
+  subtitle2: {
+    'fontSize': '0.25rem',
+    'lineHeight': '0.3rem',
+  },
+}
+
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 
   const [theme, setTheme] = useState<ThemeMode>('system')
@@ -34,9 +86,9 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const pallete = getPallete()
 
   const themeData: ITheme = {
-    pallete
+    pallete,
+    typography
   }
-
 
 
   const changeTheme = (theme: ThemeMode) => setTheme(theme)
@@ -49,6 +101,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
         theme,
         isDarkMode,
         pallete,
+        typography,
       }}
     >
 
