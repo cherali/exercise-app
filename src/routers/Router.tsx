@@ -10,7 +10,7 @@ interface RouterProps { }
 const Router: FC<RouterProps> = () => {
   return (
     <BrowserRouter>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading fullScreen size='xLarge' />}>
         <Routes />
       </Suspense>
     </BrowserRouter>

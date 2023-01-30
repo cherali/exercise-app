@@ -8,7 +8,7 @@ import MessageProvider from 'providers/MessageProvider'
 
 function App() {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Loading fullScreen size='xLarge' />}>
       <EmotionCacheProvider>
         <ThemeProvider>
           <MainStyles />
