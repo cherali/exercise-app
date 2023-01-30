@@ -4,7 +4,6 @@ export const ExerciseContainer = styled.div<{ isLoading: boolean }>(({ isLoading
   display: grid;
   grid-template-columns: auto auto ;
   grid-gap: 8px 12px;
-  backdrop-filter: blur(20px);
 
   a.disabled {
     pointer-events: none;
@@ -106,7 +105,7 @@ export const PagePaginationContainer = styled.div`
 export const NoData = styled.div`
   text-align: center;
   margin-top: 1rem;
-  
+
   p {
     font-weight: bolder;
     font-size: 1.5rem;

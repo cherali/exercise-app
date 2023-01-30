@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const ExerciseDetailsContainer = styled.div`
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: 100%;
   display: flex;
   align-items: center;
