@@ -17,7 +17,7 @@ const contextClass: Record<string, string> = {
 
 export const defaultOption: ToastOptions = {
 	position: toast.POSITION.TOP_RIGHT,
-	autoClose: 0,
+	autoClose: 5000,
 	hideProgressBar: true,
 	closeOnClick: true,
 	pauseOnHover: true,
