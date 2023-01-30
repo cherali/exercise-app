@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Button } from 'components/Button'
 
 export const DefaultHeaderContainer = styled.nav(({ theme }) => `
   height: 48px;
@@ -62,3 +63,20 @@ export const DefaultHeaderLI = styled.li(({ theme }) => `
     }
   }
 `)
+
+export const DefaultHeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+`
+
+export const ChangeTheme = styled(Button)`
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  background-color: transparent;
+  :hover {
+    background-color: transparent;
+  }
+`
