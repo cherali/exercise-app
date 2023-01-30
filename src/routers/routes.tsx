@@ -6,6 +6,7 @@ import {
 	EXERCISE_ROUTE,
 	EXERCISE_ROUTE_QUERY,
 	EXERCISE_DETAILS_ROUTE_QUERY,
+	FAVORITE_ROUTE,
 } from 'constants/routes'
 
 
@@ -14,6 +15,8 @@ const NotFoundPage = lazy(() => import('pages/NotFound'))
 
 const ExercisePage = lazy(() => import('pages/Exercise'))
 const ExerciseDetailsPage = lazy(() => import('pages/Exercise/ExerciseDetails'))
+
+const FavoritesPage = lazy(() => import('pages/Favorites'))
 
 
 export const Routes = () =>
@@ -38,6 +41,10 @@ export const Routes = () =>
 					element: <ExerciseDetailsPage />
 				},
 			]
+		},
+		{
+			path: FAVORITE_ROUTE,
+			element: <FavoritesPage />
 		},
 		{
 			path: NOT_FOUND_ROUTE,
