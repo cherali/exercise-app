@@ -5,6 +5,7 @@ import {
 	NOT_FOUND_ROUTE,
 	EXERCISE_ROUTE,
 	EXERCISE_ROUTE_QUERY,
+	EXERCISE_DETAILS_ROUTE_QUERY,
 } from 'constants/routes'
 
 
@@ -12,6 +13,7 @@ const HomePage = lazy(() => import('pages/public/Home'))
 const NotFoundPage = lazy(() => import('pages/NotFound'))
 
 const ExercisePage = lazy(() => import('pages/Exercise'))
+const ExerciseDetailsPage = lazy(() => import('pages/Exercise/ExerciseDetails'))
 
 
 export const Routes = () =>
@@ -30,7 +32,11 @@ export const Routes = () =>
 				{
 					path: EXERCISE_ROUTE_QUERY,
 					element: <ExercisePage />
-				}
+				},
+				{
+					path: EXERCISE_DETAILS_ROUTE_QUERY,
+					element: <ExerciseDetailsPage />
+				},
 			]
 		},
 		{

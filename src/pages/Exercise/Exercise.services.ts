@@ -13,7 +13,11 @@ interface GetExerciseListParams {
 	equipment: string;
 }
 
-interface Exersise {
+interface GetExerciseParams {
+	id: string;
+}
+
+export interface Exersise {
 	_id: string;
 	bodyPart: string,
 	equipment: string,
@@ -56,6 +60,13 @@ export const exerciseApi = createApi({
 			}),
 		}),
 
+		getAnExercise: build.query<Exersise, GetExerciseParams>({
+			query: ({ id }) => ({
+				url: `${exerciseUrl}/${id}`,
+				method: 'GET',
+			}),
+		}),
+
 		getBodyPart: build.query<GetBodyPartResult, null>({
 			query: () => ({
 				url: bodyPartUrl,
@@ -74,6 +85,7 @@ export const exerciseApi = createApi({
 
 export const {
 	useGetExerciseQuery,
+	useGetAnExerciseQuery,
 	useGetBodyPartQuery,
 	useGetEquipmentQuery,
 } = exerciseApi
