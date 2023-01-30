@@ -1,13 +1,13 @@
 import { FC, useMemo, useState } from 'react'
 import clsx from 'clsx'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { ExerciseCard, ExerciseCardImage, ExerciseCardImageContainer, ExerciseCardTextBodyPart, ExerciseCardTextContainer, ExerciseCardTextEquipment, ExerciseCardTextName, ExerciseCardTextTarget, ExerciseContainer, ExerciseRow, NoData, PagePaginationContainer } from './Exercise.styles'
 import type { ExerciseProps, SelectOption } from './index.d'
 import { useGetExerciseQuery } from './Exercise.services'
 import Loading from 'components/Loading'
 import { Container } from 'components/Container'
 import PagePagination from 'components/PagePagination'
-import { EXERCISE_DETAILS_ROUTE } from 'constants/routes'
+import { EXERCISE_DETAILS_ROUTE, EXERCISE_ROUTE } from 'constants/routes'
 import { ExerciseFilter } from './ExerciseFilter'
 
 
@@ -25,6 +25,7 @@ const Exercise: FC<ExerciseProps> = () => {
 	})
 
 	const params = useParams()
+	const navigate = useNavigate()
 
 
 	const { data: exerciseList, isFetching, isLoading } = useGetExerciseQuery({
@@ -46,6 +47,9 @@ const Exercise: FC<ExerciseProps> = () => {
 	}
 
 	const handleFilter = () => {
+		// reset page
+		navigate(EXERCISE_ROUTE)
+
 		setApiData({ bodyPart, equipment })
 	}
 
