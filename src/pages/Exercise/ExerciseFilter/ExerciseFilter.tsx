@@ -33,7 +33,7 @@ const ExerciseFilter: FC<ExerciseFilterProps> = ({
 
 	return (
 		<StyledExerciseFilter>
-			<p>filters:</p>
+			<p>Filters:</p>
 			<ExerciseFilterContainer>
 
 				<ExerciseFilterContent>
@@ -41,11 +41,11 @@ const ExerciseFilter: FC<ExerciseFilterProps> = ({
 					{isFetching && <Loading size='xSmall' />}
 
 					<SelectContainer>
-						<p>body parts:</p>
+						<p>Body Parts:</p>
 
 						<Select
 							name='bodyPart'
-							placeholder='Select Body Part'
+							placeholder='Body Part'
 							value={bodyPartValue}
 							onChange={onChangeBodyPart}
 							options={bodyPartOptions}
@@ -56,11 +56,11 @@ const ExerciseFilter: FC<ExerciseFilterProps> = ({
 					</SelectContainer>
 
 					<SelectContainer>
-						<p>equipment</p>
+						<p>Equipment</p>
 
 						<Select
 							name='equipment'
-							placeholder='Select Equipemnt'
+							placeholder='Equipment'
 							value={equipmentValue}
 							onChange={onChangeEquipment}
 							options={equipmentOptions}
@@ -75,7 +75,7 @@ const ExerciseFilter: FC<ExerciseFilterProps> = ({
 							disabled={isDisabled}
 							onClick={hanldeFilterButton}
 						>
-							filter
+							Filter
 						</Button>
 					</div>
 				</ExerciseFilterContent>
