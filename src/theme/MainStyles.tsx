@@ -50,6 +50,10 @@ const globalSyle = (pallete?: IPallete) => css`
 
   /* global style */
 
+  .no-scroll {
+    overflow: hidden;
+  }
+
   body {
     background-color: ${pallete?.white.main || 'inherit'}
   }
