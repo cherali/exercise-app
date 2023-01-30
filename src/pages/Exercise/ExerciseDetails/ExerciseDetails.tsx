@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import { useParams } from 'react-router-dom'
 import {
@@ -22,6 +22,7 @@ import Loading from 'components/Loading'
 import { Container } from 'components/Container'
 import { Button } from 'components/Button'
 import { getFavoriteList, removeFavorite, setFavorite } from 'utils/storage'
+import { useHTMLTag } from 'providers/HTMLTagProvider/useHTMLTag'
 
 
 const ExerciseDetails: FC<ExerciseDetailsProps> = () => {
@@ -29,6 +30,8 @@ const ExerciseDetails: FC<ExerciseDetailsProps> = () => {
 	const favoriteList = getFavoriteList()
 
 	const [isFavorite, setIsFavorite] = useState(params.exerciseId && Boolean(favoriteList.find(f => f.id === params.exerciseId)))
+
+	const { setTitleTag } = useHTMLTag()
 
 	const { data: exercise, isFetching } = useGetAnExerciseQuery({ id: params.exerciseId || '' })
 
@@ -48,6 +51,14 @@ const ExerciseDetails: FC<ExerciseDetailsProps> = () => {
 			}
 		}
 	}
+
+	useEffect(() => {
+		setTitleTag(`Exercise App - ${exercise?.name}`)
+		return () => {
+			setTitleTag('Exercise App')
+		}
+	}, [exercise])
+
 
 	return (
 		<Container>
