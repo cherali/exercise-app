@@ -9,7 +9,19 @@ export const MessageProviderContainer = styled.div`
     padding: 0.5rem;
     justify-content: space-between;
     overflow: hidden;
-    cursor: pointer; 
+    cursor: pointer;
+
+    &[class*='-theme--dark']{
+      * {
+        color: ${({ theme }) => theme.pallete.black.main};
+      }
+    }
+
+   
+    &.message-default {
+      background-color: ${({ theme }) => theme.pallete.white.main};
+      color: ${({ theme }) => theme.pallete.black.main};
+    }
 
     button {
       align-self: center;
