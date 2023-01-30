@@ -1,16 +1,10 @@
-import { useEffect } from 'react'
-import { toast } from 'react-toastify'
-
+import { Container } from 'components/Container'
 
 const Home = () => {
-
-  useEffect(() => {
-    toast.dark('shuitxczkh')
-  }, [])
-
-
   return (
-    <div>Home</div>
+    <Container>
+      <h4>Welcome to Exersice App</h4>
+    </Container>
   )
 }
 
